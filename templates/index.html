@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/checkerboard.css')}}" >
+
+        <title>Checkerboard</title>
+
+    </head>
+    
+    <body>
+        <h1>Checkboard</h1>
+        
+        <table>
+        {% for i in range(vertical): %}
+            <tr>
+                {% for j in range(horizontal): %}
+                <td class='color{{ (i+j)%2+1 }} '
+                ></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    
+    </body>
+</html>
